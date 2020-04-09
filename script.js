@@ -77,6 +77,8 @@ const theWord = function(word, inputLetterWords) {
   document.querySelector(".the_word").innerHTML = display.join(" ");
 };
 
+///test456
+
 const guessLetter = function() {
   if (gameOver) {
     return;
