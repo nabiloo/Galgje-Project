@@ -121,7 +121,7 @@ input {
   width: 150px;
 }
 
-input:focus{
+*:focus{
   outline: none;
 }
 

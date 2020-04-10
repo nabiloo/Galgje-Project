@@ -43,15 +43,15 @@ const winTheGame = function () {
 };
 
 // het zichtbaar maken van de lose message - status van de game naar true
-const lose4 = function () {
+const loseTheGame = function () {
   loseMessage.style.display = "block";
-  gameOver = true;
+  return gameOver = true;
 };
 
 // weergeven van de nog aantal pogingen te gaan.
 const updateTriesDisplay = function (tries) {
   livesRemaningMessage.innerHTML = 5 - tries;
-  return 5 - tries;
+  // return 5 - tries; // output for jest test
 };
 
 // het weergeven van de foute geraden letters 
@@ -72,7 +72,7 @@ const theWord = function (word, inputLetterWords) {
     }
   });
   diplayCorrectLetters.innerHTML = display.join(" ");
-  return display.join(" ");
+  // return display.join(" "); // output for jest test
 };
 
 const guessLetter = function () {
@@ -108,10 +108,9 @@ const guessLetter = function () {
   if (wordGuessed(word, inputs)) {
     winTheGame();
   } else if (tries >= 5) {
-    lose4();
+    loseTheGame();
   }
 };
-
 
 function beginTheGameWithPlayer(player1) {
 
@@ -123,7 +122,8 @@ function beginTheGameWithPlayer(player1) {
 
   // selecteerd een woord uit een array wordList en laat het zien
   word = wordpicker(wordList).split("");
-  displayCorrectWord.innerHTML = `"${word.join("")}"`;
+  const joindWord = word.join("");
+  displayCorrectWord.innerHTML = `"${joindWord}"`;
 
   // start waarde van de pogingen en display dat
   tries = 0;
@@ -132,11 +132,10 @@ function beginTheGameWithPlayer(player1) {
   // lege array voor straks, voor de user input 
   inputs = [];
 
-  // checkt de input met de woord
+  // checkt de input met het woord
   theWord(word, inputs);
   letters(word, inputs);
 }
-
 
 document.addEventListener("DOMContentLoaded", function () {
   const guessButton = document.querySelector(".guess")
