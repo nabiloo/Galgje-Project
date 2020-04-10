@@ -12,11 +12,9 @@ body {
   justify-content: center;
   margin: auto;
   width: 500px;
-  
 }
 
 header {
- 
   margin: auto;
   padding-top:40px;
   padding-bottom: 10px;
@@ -26,7 +24,7 @@ header {
   margin: auto;
   width: 400px;
   height: 400px;
-  background-color: rgb(170, 198, 211);
+  background-color: rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
   border-radius: 20px;
   padding: 30px;
@@ -37,15 +35,18 @@ h1 {
   font-size: 40px;
 }
 
+h3 {
+  text-align: center;
+  margin: 0 0 10px 0;
+}
+
 header > p {
-  background-color: green;
-  color: white;
-  font-size: 17px;
+  font-size: 10px;
   padding: 10px;
   font-weight: 100;
   text-align: center;
+  font-style: italic;
   border-radius: 5px;
-  
 }
 
 .the_word {
@@ -62,9 +63,9 @@ header > p {
 
 
 .gues-box {
-  background-color: green;
+  background-color: rgba(0, 0, 0, 0.1);
   height: auto;
-  width: 300px;
+  width: 100%;
   text-align: center;
   justify-content: center;
   margin: auto;
@@ -72,28 +73,56 @@ header > p {
   margin-bottom: 40px;
 }
 
-.guess {
-  margin: 10px;
+.guess, .restart{
+  margin: 10px 0 10px 10px;
   padding: 10px;
-  font-size: 18px;
+  font-size: 15px;
+  border: none;
   border-radius: 5px;
+  font-size: 18px;
+  color: white;
+}
+
+.guess {
+  background-color: white;
+  color: green;
+}
+
+.restart {
+  background-color: white;
+  color: red;
+}
+
+.guess:hover{
+  cursor: pointer;
+  background-color: green;
+  color: white;
+}
+
+.restart:hover{
+  cursor: pointer;
+  background-color: red;
+  color: white;
+}
+
+.guessed_letters{
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  text-align: center;
+  letter-spacing: 5px;
 }
 
 input {
   padding: 10px;
   font-size: 18px;
+  border: none;
   border-radius: 5px;
   width: 150px;
 }
 
-.restart {
-  margin-top: 30px;
-  background-color: red;
-  color: white;
-  font-size: 15px;
-  border-radius: 5px;
-  padding: 10px 20px;
-
+input:focus{
+  outline: none;
 }
 
 .lives {
@@ -107,13 +136,47 @@ p {
 
 .win,
 .lose {
+  text-align: center;
+  margin: 40px;
   display: none;
 }
 
 .win h2 {
+  padding: 20px;
   color: red;
 }
 
 .lose h2 {
+  padding: 20px;
   color: blue;
+}
+
+.win h2, .lose h2{
+  animation-name: zoom;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+}
+
+@keyframes zoom{
+  from{ transform: scale(0.5);} 
+  to{ transform: scale(2);} 
+}
+
+.anim-wrapper{
+  width: 330px;
+  height: 260px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 25px -2px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 25px -2px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 25px -2px rgba(0,0,0,0.75);
+}
+
+.anim-wrapper img{
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
 }

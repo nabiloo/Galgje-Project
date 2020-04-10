@@ -1,17 +1,3 @@
-// const clean = function () {
-//   document.querySelector("input").value = "";
-// };
-
-// const spanTheWord1 = function (word) {
-//   document.querySelector(".lose p span").innerHTML = `"${word.join("")}"`;
-// };
-
-// function getThePlayer(player) {
-//   let play = document.getElementById("player1");
-//   play = play + "We are about to start the game";
-//   return play;
-// }
-
 let word;
 const maxAmount = 5;
 let inputs;
@@ -26,8 +12,6 @@ const diplayCorrectLetters = document.querySelector(".the_word")
 const inputfield = document.querySelector("input")
 const displayCorrectWord = document.querySelector(".lose p span")
 
-
-////////////////////////////////////////////////
 const wordList = [
   "vis",
   "toeter",
