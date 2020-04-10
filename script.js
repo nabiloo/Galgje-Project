@@ -61,8 +61,12 @@ const lose4 = function () {
 
 // weergeven van de nog aantal pogingen te gaan.
 const updateTriesDisplay = function (tries) {
+  return 5 - tries;
   document.querySelector(".lives span").innerHTML = 5 - tries;
 };
+
+
+
 
 // het weergeven van de foute geraden letters 
 const letters = function (word, inputs) {
@@ -82,8 +86,8 @@ const theWord = function (word, inputLetterWords) {
     }
 
   });
-  // return display.join(" ");
-  document.querySelector(".the_word").innerHTML = display.join(" ");
+  return display.join(" ");
+  // document.querySelector(".the_word").innerHTML = display.join(" ");
 
 };
 

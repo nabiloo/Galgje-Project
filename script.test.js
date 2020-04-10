@@ -32,8 +32,13 @@ test('checks if char excits in a word', () => {
 
 
 // updaten van het aantal pogingen van de gebruiker
-// test('shoud update the remain game play', () => {
-//     expect(updateTriesDisplay(1)).toEqual(4)
-    // expect(updateTriesDisplay(2)).toEqual(3)
-// });
+test('shoud update the remain game play', () => {
+    expect(updateTriesDisplay(1)).toEqual(4)
+});
+
+
+// updaten van het aantal pogingen van de gebruiker
+test('shoud update the remain game play', () => {
+    expect(updateTriesDisplay(1)).not.toEqual(6)
+});
 
