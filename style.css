@@ -10,3 +10,11 @@
 .lose h2 {
   color: blue;
 }
+
+.diplay-element{
+  display: block;
+}
+
+.hide-element{
+  display: none;
+}
